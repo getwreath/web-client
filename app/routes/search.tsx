@@ -1,4 +1,4 @@
-import type { LoaderFunction } from "@remix-run/node";
+import type { LoaderFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
@@ -10,6 +10,12 @@ export const loader: LoaderFunction = async () => {
 		{ id: '4', label: 'Fourth Item' },
 	]);
 }
+
+export const meta: MetaFunction = () => {
+	return {
+		title: 'Search Wreath',
+	};
+};
 
 export default function Search() {
 	const results = useLoaderData();

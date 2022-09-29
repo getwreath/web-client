@@ -1,4 +1,4 @@
-import type { ActionFunction } from "@remix-run/node";
+import type { ActionFunction, MetaFunction } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 
 export const action: ActionFunction = async ({ request }) => {
@@ -7,6 +7,12 @@ export const action: ActionFunction = async ({ request }) => {
 	// await logIn(body);
 	return redirect('/');
 }
+
+export const meta: MetaFunction = () => {
+	return {
+		title: 'Log In to Wreath',
+	};
+};
 
 export default function LogIn() {
 	return (
