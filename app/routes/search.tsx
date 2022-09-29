@@ -4,19 +4,27 @@ import { useLoaderData } from "@remix-run/react";
 
 export const loader: LoaderFunction = async () => {
 	return json([
-		{ id: '1', name: 'First Person' },
-		{ id: '2', name: 'Second Person' },
-		{ id: '3', name: 'Third Person' },
-		{ id: '4', name: 'Fourth Person' },
+		{ id: '1', label: 'First Item' },
+		{ id: '2', label: 'Second Item' },
+		{ id: '3', label: 'Third Item' },
+		{ id: '4', label: 'Fourth Item' },
 	]);
 }
 
 export default function Search() {
+	const results = useLoaderData();
+
 	return (
 		<div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
 			<h1>Search</h1>
 
 			<input type="text" />
+
+			<ol>
+				{results.map((result) => (
+					<li key={result.id}>{result.label}</li>
+				))}
+			</ol>
 		</div>
 	);
 }
