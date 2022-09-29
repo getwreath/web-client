@@ -10,7 +10,7 @@ export const action: ActionFunction = async ({ request }) => {
 
 export default function LogIn() {
 	return (
-		<div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+		<div>
 			<h1>Log In</h1>
 			<form method="post" action="/login">
 				<div>

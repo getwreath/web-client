@@ -15,10 +15,25 @@ export default function Search() {
 	const results = useLoaderData();
 
 	return (
-		<div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+		<div>
 			<h1>Search</h1>
 
-			<input type="text" />
+			<form method="get" action="/search">
+				<input aria-label="Search" id="search" name="search" type="search" />
+
+				<button type="submit">Search</button>
+
+				<details>
+					<summary>Advanced Search</summary>
+
+					<fieldset>
+						<legend>Type</legend>
+
+						<div><label><input name="type" type="checkbox" value="person" /><span>Person</span></label></div>
+						<div><label><input name="type" type="checkbox" value="pet" /><span>Pet</span></label></div>
+					</fieldset>
+				</details>
+			</form>
 
 			<ol>
 				{results.map((result) => (

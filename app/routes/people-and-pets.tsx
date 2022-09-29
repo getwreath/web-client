@@ -15,7 +15,7 @@ export default function BrowsePeopleAndPets() {
 	const peopleAndPets = useLoaderData();
 
 	return (
-		<div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+		<div>
 			<h1>People & Pets</h1>
 
 			<ol>
