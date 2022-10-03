@@ -1,7 +1,6 @@
 export default function Index() {
   return (
     <div>
-      <h1>Wreath</h1>
       <ul>
         <li>
           <a
