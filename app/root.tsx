@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import {
+	Link,
 	Links,
 	LiveReload,
 	Meta,
@@ -23,7 +24,7 @@ export default function App() {
 			</head>
 			<body>
 				<nav>
-					<a href="/">Wreath</a>
+					<Link to="/">Wreath</Link>
 				</nav>
 				<Outlet />
 				<ScrollRestoration />
